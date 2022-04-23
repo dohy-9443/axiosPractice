@@ -11,7 +11,8 @@ const MyPage = () => {
 
   return (
     <div>
-      나는 mypage임
+      내 username은 {state.userName} 이고 <br />
+      내 name은 {state.Name} 입니다.
     </div>
   );
 };
