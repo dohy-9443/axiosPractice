@@ -50,6 +50,7 @@ const MainPage = () => {
   const navigate = useNavigate()
   return (
     <S.Container>
+      <div>하이하이</div>
       <ListMap list={users} component={<List />} />
     </S.Container>
   );
