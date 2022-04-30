@@ -4,8 +4,10 @@ const MyPage = () => {
 
   const {state} = useLocation()
 
+  const [상태, 상태변경] = useState('초기값');
+
   useEffect(() => {
-    console.log(state)
+    
   }, [])
 
 
