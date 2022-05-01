@@ -5,6 +5,7 @@ import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import MainPage from './Pages/Main/MainPage';
 import MyPage from './Pages/My/MyPage';
 import InfinitiScroll from './Pages/IntersectionObserver/IntersectionObserver';
+import Bg from './Pages/Bg/Bg';
 const App = () => {
   return (
     <BrowserRouter>
@@ -12,6 +13,7 @@ const App = () => {
         <Route path="/" element={<MainPage />} />
         <Route path="/my" element={<MyPage />} />
         <Route path="/infinite" element={<InfinitiScroll />} />
+        <Route path="/bg" element={<Bg />} />
       </Routes>
     </BrowserRouter>
   );
