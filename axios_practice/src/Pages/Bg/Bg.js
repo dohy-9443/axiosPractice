@@ -1,6 +1,7 @@
 import React from 'react';
 
 import * as S from './style'
+import Box from '../../Components/Box';
 
 const Bg = ({children}) => {
   const [상태, 상태변경] = React.useState('초기값');
@@ -20,11 +21,9 @@ const Bg = ({children}) => {
       <S.Hei>
         <S.DIV>
           <S.Flex>
-            <S.Border onClick={clickPlus}>
-              <S.Box>{숫자}</S.Box>
-            </S.Border>
-            <S.Border onClick={() => {}}><S.Box>50%</S.Box></S.Border>
-            <S.Border><S.Box>0%</S.Box></S.Border>
+            <Box percent={100} />
+            <Box percent={50} />
+            <Box percent={0} />
           </S.Flex>
         </S.DIV>
       </S.Hei>

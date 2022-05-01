@@ -62,25 +62,3 @@ export const Flex = styled.div`
 display: flex; justify-content: center;
 flex-wrap: wrap;
 `;
-
-export const Border = styled.div`
-width: 500px; height: 500px;
-background: linear-gradient(135deg, #5DFFCE, #00C2FF);
-display: flex; justify-content: center; align-items: center;
-font-size: 25px; font-weight: 600; color: #ffffff;
-margin-right: 20px;
-&:nth-child(2) {
-  background: linear-gradient(135deg, rgba(93, 255, 206, 0.5), rgba(0, 194, 255, 0.5));
-}
-
-&:last-child {
-  background: #666666;
-} 
-`;
-
-export const Box = styled.div`
-width: 498px; height: 498px;
-background: #171717;
-display: flex; justify-content: center; align-items: center;
-font-size: 25px; font-weight: 600; color: #ffffff;
-`;
