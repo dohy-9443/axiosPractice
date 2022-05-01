@@ -10,24 +10,26 @@ export const Back = {
     &::before {
       content: '';
       position: absolute;
-      width: 880px;
-      height: 880px;
+      width: 580px;
+      height: 580px;
       border-radius: 50%;
       background: linear-gradient(135.97deg, #98FFF3 14.52%, #0057FF 50.35%, #BD00FF 87.24%);
       left: -270px;
       bottom: 332px;
+      opacity: 0.6;
       z-index: 1;
     }
 
     &::after {
       content: '';
       position: absolute;
-      width: 710px;
-      height: 710px;
+      width: 310px;
+      height: 310px;
       border-radius: 50%;
       background: linear-gradient(135.97deg, #98FFA9 14.52%, #00FFB2 50.35%, #00E0FF 87.24%);
       right: -65px;
       bottom: -159px;
+      opacity: 0.3;
       z-index: 1;
     }
   `,
@@ -47,12 +49,38 @@ export const Hei = styled.div`
 `;
 
 export const DIV = styled.div`
-  width: 500px;
+  /* margin: 50px auto; */
+  width: 100%;
+  padding: 100px 0;
   height: 10000px;
-  background-color: green;
+  /* background-color: green; */
   font-size: 20px;
   color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+`;
+
+export const Flex = styled.div`
+display: flex; justify-content: center;
+flex-wrap: wrap;
+`;
+
+export const Border = styled.div`
+width: 500px; height: 500px;
+background: linear-gradient(135deg, #5DFFCE, #00C2FF);
+display: flex; justify-content: center; align-items: center;
+font-size: 25px; font-weight: 600; color: #ffffff;
+margin-right: 20px;
+&:nth-child(2) {
+  background: linear-gradient(135deg, rgba(93, 255, 206, 0.5), rgba(0, 194, 255, 0.5));
+}
+
+&:last-child {
+  background: #666666;
+} 
+`;
+
+export const Box = styled.div`
+width: 498px; height: 498px;
+background: #171717;
+display: flex; justify-content: center; align-items: center;
+font-size: 25px; font-weight: 600; color: #ffffff;
 `;
