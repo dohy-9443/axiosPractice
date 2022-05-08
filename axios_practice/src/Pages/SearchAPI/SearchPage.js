@@ -23,6 +23,7 @@ const SearchPage = () => {
   const GetVideoAPI = async () => {
     try {
       const res = await KaKaoVideo.get(
+        // `v2/search/vclip?sort=accuracy&size=10&query=${textVal}`
         `v2/search/vclip?sort=accuracy&size=10&query=${textVal}`
       );
       if (res?.data.documents.length > 0) {
@@ -59,13 +60,16 @@ const SearchPage = () => {
             <S.Ul>
               {list && list?.length > 0
                 ? list?.map((item, index) => {
-                    // console.log(item);
+                    console.log(item);
                     return (
                       <S.Li
                         key={index}
                         onClick={() => window.open(item.url, "_blank")}
                       >
                         <img src={item.thumbnail} />
+                        <S.TitleDIV>
+                          <S.Title>{item.title}</S.Title>
+                        </S.TitleDIV>
                       </S.Li>
                     );
                   })

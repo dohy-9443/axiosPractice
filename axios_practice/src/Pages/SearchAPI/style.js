@@ -41,14 +41,38 @@ export const ListCover = styled.div`
 
 export const Ul = styled.ul`
   width: 100%;
+  display: flex;
+  flex-wrap: wrap;
 `;
 
 export const Li = styled.li`
-  width: 100%;
+  width: 48%;
+  margin: 1%;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
 
   & img {
     display: block;
     width: 100%;
     height: auto;
   }
+`;
+
+export const TitleDIV = styled.div`
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.8);
+`;
+
+export const Title = styled.div`
+  padding: 10px 5px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #fff;
 `;
