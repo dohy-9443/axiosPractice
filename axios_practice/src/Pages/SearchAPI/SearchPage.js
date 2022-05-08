@@ -12,7 +12,7 @@ const SearchPage = () => {
     baseURL: "https://dapi.kakao.com/",
     headers: {
       "Content-Type": "application/json",
-      Authorization: `KakaoAK ${process.env.REACT_APP_KEY}`,
+      Authorization: `KakaoAK 0770814cfaea442c014e5e1349393f89`,
     },
   });
 
@@ -35,7 +35,7 @@ const SearchPage = () => {
 
   useEffect(() => {
     GetVideoAPI();
-  }, []);
+  }, [textVal]);
 
   return (
     <S.Container>

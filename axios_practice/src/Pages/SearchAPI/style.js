@@ -15,7 +15,7 @@ export const Inner = styled.div`
 `;
 export const InputBox = styled.div`
   width: 100%;
-  height: 40px;
+  height: 50px;
 `;
 
 export const Input = styled.input`
@@ -23,13 +23,16 @@ export const Input = styled.input`
   height: 100%;
   border-radius: 5px;
   border: 1px solid #fca400;
-  padding: 14px;
+  padding: 0 14px;
   font-size: 18px;
   outline: none;
   font-weight: bold;
   color: #fca400;
+  box-sizing: border-box;
 
   &::placeholder {
     color: #999999;
   }
 `;
+
+export const ListCover = styled.div``;
