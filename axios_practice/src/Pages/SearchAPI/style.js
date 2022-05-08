@@ -1,12 +1,11 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 100%;
+  width: 500px;
+  margin: 0 auto;
 `;
 
 export const Wrap = styled.div`
-  width: 500px;
-  margin: 0 auto;
   padding: 25px 20px;
 `;
 
@@ -16,6 +15,7 @@ export const Inner = styled.div`
 export const InputBox = styled.div`
   width: 100%;
   height: 50px;
+  margin-bottom: 10px;
 `;
 
 export const Input = styled.input`
@@ -35,4 +35,20 @@ export const Input = styled.input`
   }
 `;
 
-export const ListCover = styled.div``;
+export const ListCover = styled.div`
+  width: 100%;
+`;
+
+export const Ul = styled.ul`
+  width: 100%;
+`;
+
+export const Li = styled.li`
+  width: 100%;
+
+  & img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+`;

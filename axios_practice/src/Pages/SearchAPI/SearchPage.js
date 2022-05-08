@@ -1,11 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import Axios from "axios";
 import * as S from "./style";
 
 const SearchPage = () => {
   const [textVal, setTextVal] = useState("");
-  // const [sendText, setSendText] = useState('');
   const [list, setList] = useState([]);
+
+  const apiReq = useRef(false);
+  const navigate = useNavigate();
 
   // api 세팅
   const KaKaoVideo = Axios.create({
@@ -22,10 +25,8 @@ const SearchPage = () => {
       const res = await KaKaoVideo.get(
         `v2/search/vclip?sort=accuracy&size=10&query=${textVal}`
       );
-      console.log(res);
-      if (res.documents.length > 0) {
-        console.log(res.documents);
-        setList(res.documents);
+      if (res?.data.documents.length > 0) {
+        setList(res?.data.documents);
       }
     } catch (e) {
       console.error(e);
@@ -34,7 +35,12 @@ const SearchPage = () => {
   // api e
 
   useEffect(() => {
-    GetVideoAPI();
+    apiReq.current = true;
+    if (apiReq) {
+      GetVideoAPI();
+      console.log(list);
+      apiReq.current = false;
+    }
   }, [textVal]);
 
   return (
@@ -49,6 +55,23 @@ const SearchPage = () => {
               onChange={(e) => setTextVal(e.target.value)}
             />
           </S.InputBox>
+          <S.ListCover>
+            <S.Ul>
+              {list && list?.length > 0
+                ? list?.map((item, index) => {
+                    // console.log(item);
+                    return (
+                      <S.Li
+                        key={index}
+                        onClick={() => window.open(item.url, "_blank")}
+                      >
+                        <img src={item.thumbnail} />
+                      </S.Li>
+                    );
+                  })
+                : null}
+            </S.Ul>
+          </S.ListCover>
         </S.Inner>
       </S.Wrap>
     </S.Container>
