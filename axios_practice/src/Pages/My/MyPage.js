@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 
@@ -11,48 +11,27 @@ const MyPage = () => {
   const [activeIdx, setActiveIdx] = useState(0);
 
   const data = [
-    { id: 1, title: "제목1", text: "설명1" },
-    { id: 2, title: "제목2", text: "설명2" },
-    { id: 3, title: "제목3", text: "설명3" },
-    { id: 4, title: "제목4", text: "설명4" },
+    { id: 1, title: "제목1", text: "설명1", isCheck: false },
+    { id: 2, title: "제목2", text: "설명2", isCheck: false },
+    { id: 3, title: "제목3", text: "설명3", isCheck: false },
+    { id: 4, title: "제목4", text: "설명4", isCheck: false },
   ];
 
   useEffect(() => {
-    let copy = [];
-
-    data.forEach((item) => {
-      copy.push({ ...item, isCheck: false });
-    });
-
-    setList(copy);
-
-    return () => {
-      setList([]);
-    };
+    setList(data);
   }, []);
 
   return (
     <div>
       내 username은 {state.userName} 이고 <br />내 name은 {state.Name} 입니다.
       <Ul>
-        {list.map((item, index) => (
-          // <Li key={item.id} onClick={() => setActiveIdx(index + 1)}>
-          // <Li
-          //   key={item.id}
-          //   onClick={() => {
-          //     let copy = [...list];
-          //     copy[index].isCheck = !copy[index].isCheck;
-          //     setList(copy);
-          //   }}
-          // >
-          //   <Show>{item.title}</Show>
-          //   {/* {item.id === activeIdx && <Hide>{item.text}</Hide>} */}
-          //   {item.isCheck && <Hide>{item.text}</Hide>}
-          // </Li>
-          <React.Fragment key={item.id}>
-            <List title={item.title} text={item.text} />
-          </React.Fragment>
-        ))}
+        {list.map((item, index) => {
+          return (
+            <Fragment key={index}>
+              <List title={item.title} text={item.text} />
+            </Fragment>
+          );
+        })}
       </Ul>
     </div>
   );

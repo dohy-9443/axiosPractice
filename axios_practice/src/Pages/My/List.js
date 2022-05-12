@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
-const List = ({ title, text }) => {
-  const [isShow, setIsShow] = React.useState(false);
+
+const List = (props) => {
+  const [isShow, setIsShow] = useState(false);
+
   return (
     <Li onClick={() => setIsShow(!isShow)}>
-      <Show>{title}</Show>
-      {isShow && <Hide>{text}</Hide>}
+      <Show>{props.title}</Show>
+      {isShow && <Hide>{props.text}</Hide>}
     </Li>
   );
 };
