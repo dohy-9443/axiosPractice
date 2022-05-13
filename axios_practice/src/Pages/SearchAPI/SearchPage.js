@@ -24,7 +24,7 @@ const SearchPage = () => {
     try {
       const res = await KaKaoVideo.get(
         // `v2/search/vclip?sort=accuracy&size=10&query=${textVal}`
-        `v2/search/vclip?sort=accuracy&size=10&query=${textVal}`
+        `v2/search/vclip?sort=accuracy&size=10&query=${textVal}`, {} , {} 
       );
       if (res?.data.documents.length > 0) {
         setList(res?.data.documents);
