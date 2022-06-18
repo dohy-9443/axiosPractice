@@ -24,7 +24,9 @@ const SearchPage = () => {
     try {
       const res = await KaKaoVideo.get(
         // `v2/search/vclip?sort=accuracy&size=10&query=${textVal}`
-        `v2/search/vclip?sort=accuracy&size=10&query=${textVal}`, {} , {} 
+        `v2/search/vclip?sort=accuracy&size=10&query=${textVal}`,
+        {},
+        {}
       );
       if (res?.data.documents.length > 0) {
         setList(res?.data.documents);
@@ -66,7 +68,7 @@ const SearchPage = () => {
                         key={index}
                         onClick={() => window.open(item.url, "_blank")}
                       >
-                        <img src={item.thumbnail} />
+                        <img src={item.thumbnail} alt="" />
                         <S.TitleDIV>
                           <S.Title>{item.title}</S.Title>
                         </S.TitleDIV>
