@@ -27,10 +27,13 @@ const MainPage = () => {
     const ip = "https://jsonplaceholder.typicode.com";
 
     try {
-      const response = await axios.get(`${ip}/users`);
-      if (response.data.length > 0) {
-        setUsers(response.data);
-      }
+      // const response = await axios.get(`${ip}/users`);
+      fetch(`${ip}/users`)
+        .then((res) => res.json())
+        .then((data) => console.log(data));
+      // if (response.data.length > 0) {
+      //   setUsers(response.data);
+      // }
     } catch (e) {
       console.error(e);
     }

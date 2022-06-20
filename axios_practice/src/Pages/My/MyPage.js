@@ -8,7 +8,6 @@ const MyPage = () => {
   const { state } = useLocation();
 
   const [list, setList] = useState([]);
-  const [activeIdx, setActiveIdx] = useState(0);
 
   const data = [
     { id: 1, title: "제목1", text: "설명1", isCheck: false },
